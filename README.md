@@ -21,7 +21,7 @@ the Overkiz platform that powers Flexom.
   (open / stop / close, position slider) grouped by room, with a room filter.
 - **Live updates** — the panel polls the Overkiz event stream while open, so changes made from
   wall switches or the Flexom app show up.
-- **Siri & Shortcuts** — App Intents with French and English phrases:
+- WIP: **Siri & Shortcuts** — App Intents with French and English phrases:
   - « Dis Siri, allume *Lampe salon* avec FlexomBar »
   - « Dis Siri, ferme les volets avec FlexomBar »
   - « Dis Siri, éteins les lumières avec FlexomBar »
