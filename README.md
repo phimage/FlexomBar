@@ -13,6 +13,8 @@ the Overkiz platform that powers Flexom.
 > interoperability. The software is provided "as is", without warranty of any kind; use it at
 > your own risk and see the [LICENSE](LICENSE) for details.
 
+![FlexomBar screenshot](Screenshot.png)
+
 ## Features
 
 - **Menu bar panel** — lights (on/off, brightness when dimmable) and shutters
