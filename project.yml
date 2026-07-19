@@ -1,0 +1,45 @@
+name: FlexomBar
+options:
+  bundleIdPrefix: com.phimage
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+
+packages:
+  swift-overkiz-api:
+    url: https://github.com/phimage/swift-overkiz-api.git
+    from: 1.0.1
+
+targets:
+  FlexomBar:
+    type: application
+    platform: macOS
+    sources:
+      - FlexomBar
+    dependencies:
+      - package: swift-overkiz-api
+        product: OverkizAPI
+    info:
+      path: FlexomBar/Info.plist
+      properties:
+        CFBundleDisplayName: FlexomBar
+        # Menu bar only: no Dock icon, no app switcher entry.
+        LSUIElement: true
+        LSApplicationCategoryType: public.app-category.utilities
+    entitlements:
+      path: FlexomBar/FlexomBar.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+    settings:
+      base:
+        SWIFT_VERSION: "6.0"
+        SWIFT_STRICT_CONCURRENCY: complete
+        # Ad-hoc signing: enough to run locally and to register App Intents
+        # with the system; switch to a team identity for distribution.
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        ENABLE_HARDENED_RUNTIME: false
+        GENERATE_INFOPLIST_FILE: false
+        MARKETING_VERSION: 0.1.0
+        CURRENT_PROJECT_VERSION: 1
