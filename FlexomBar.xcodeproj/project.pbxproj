@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04481A53CF2ECF4922471A52 /* FlexomStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D90E12ED1C9FD3F8402458 /* FlexomStore.swift */; };
+		28C1C43558AA5A62179F439B /* Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5456F7372B2E9D9182CDA016 /* Shortcuts.swift */; };
+		58791ACA79BD47A278D1F81B /* Intents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686B642E1F6F8C49CF54C8D /* Intents.swift */; };
+		7AE8479B770EC501C771C308 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E530C2BF917C2DE4A69FEA7 /* Entities.swift */; };
+		86B5F839E2DF6045C42FD912 /* FlexomBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BEE4FE74D5E9F382E60C6 /* FlexomBarApp.swift */; };
+		8DDFA6EB16F20D3D2FD040C5 /* OverkizAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 0EC57C9E9141222FC23E7A07 /* OverkizAPI */; };
+		94303534B1A4370FB3F4A654 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF747D62B47F1E669A4D9763 /* LoginView.swift */; };
+		94CA92236DB366A5203473C1 /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7B21A9BAB74D466570EAE /* MenuContentView.swift */; };
+		AB51F0CE2F2B77F38A179993 /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB523514F811955DC00BAEAC /* DeviceListView.swift */; };
+		FA67A4DD34EEE66726B0E21A /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B9B0557D9B96CAEFC6027 /* Keychain.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		11C552FE2FB18C9112FA83C2 /* FlexomBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexomBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1302275B0D212097E55678AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		44D90E12ED1C9FD3F8402458 /* FlexomStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexomStore.swift; sourceTree = "<group>"; };
+		51C7B21A9BAB74D466570EAE /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentView.swift; sourceTree = "<group>"; };
+		5456F7372B2E9D9182CDA016 /* Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcuts.swift; sourceTree = "<group>"; };
+		550BEE4FE74D5E9F382E60C6 /* FlexomBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexomBarApp.swift; sourceTree = "<group>"; };
+		6E530C2BF917C2DE4A69FEA7 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		6E8F4C6AD36BC3DB9BAD56B5 /* FlexomBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlexomBar.entitlements; sourceTree = "<group>"; };
+		AF747D62B47F1E669A4D9763 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B07B9B0557D9B96CAEFC6027 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		C686B642E1F6F8C49CF54C8D /* Intents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intents.swift; sourceTree = "<group>"; };
+		DB523514F811955DC00BAEAC /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A17274F1E1A0AE2082BFAEA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DDFA6EB16F20D3D2FD040C5 /* OverkizAPI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26DEC2ABFA2DB2919B03E1D7 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				6E530C2BF917C2DE4A69FEA7 /* Entities.swift */,
+				C686B642E1F6F8C49CF54C8D /* Intents.swift */,
+				5456F7372B2E9D9182CDA016 /* Shortcuts.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		27DA520E6EB10E79A10BF965 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11C552FE2FB18C9112FA83C2 /* FlexomBar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44AB3A344878654146FCD5B9 = {
+			isa = PBXGroup;
+			children = (
+				779F4541DA8C580CA96E47BE /* FlexomBar */,
+				27DA520E6EB10E79A10BF965 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		779F4541DA8C580CA96E47BE /* FlexomBar */ = {
+			isa = PBXGroup;
+			children = (
+				6E8F4C6AD36BC3DB9BAD56B5 /* FlexomBar.entitlements */,
+				550BEE4FE74D5E9F382E60C6 /* FlexomBarApp.swift */,
+				1302275B0D212097E55678AA /* Info.plist */,
+				26DEC2ABFA2DB2919B03E1D7 /* Intents */,
+				942AF43D871D57E417D2F042 /* Store */,
+				8BE1DC1D648C07666BE83F98 /* Support */,
+				81F0770E0656F93A3453FD90 /* Views */,
+			);
+			path = FlexomBar;
+			sourceTree = "<group>";
+		};
+		81F0770E0656F93A3453FD90 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB523514F811955DC00BAEAC /* DeviceListView.swift */,
+				AF747D62B47F1E669A4D9763 /* LoginView.swift */,
+				51C7B21A9BAB74D466570EAE /* MenuContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8BE1DC1D648C07666BE83F98 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				B07B9B0557D9B96CAEFC6027 /* Keychain.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		942AF43D871D57E417D2F042 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				44D90E12ED1C9FD3F8402458 /* FlexomStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17CDCAAA1E0E19154D081C9D /* FlexomBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10A3B743DE61AB42DC8240BC /* Build configuration list for PBXNativeTarget "FlexomBar" */;
+			buildPhases = (
+				BE8DDFF83F2A13395F70B37E /* Sources */,
+				A17274F1E1A0AE2082BFAEA1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlexomBar;
+			packageProductDependencies = (
+				0EC57C9E9141222FC23E7A07 /* OverkizAPI */,
+			);
+			productName = FlexomBar;
+			productReference = 11C552FE2FB18C9112FA83C2 /* FlexomBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E859E45283FFA63AFF2C4C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					17CDCAAA1E0E19154D081C9D = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = E326A6EDFC97CF53F7DD509F /* Build configuration list for PBXProject "FlexomBar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 44AB3A344878654146FCD5B9;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1C40918EA20C96038052A086 /* XCRemoteSwiftPackageReference "swift-overkiz-api" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 27DA520E6EB10E79A10BF965 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17CDCAAA1E0E19154D081C9D /* FlexomBar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE8DDFF83F2A13395F70B37E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB51F0CE2F2B77F38A179993 /* DeviceListView.swift in Sources */,
+				7AE8479B770EC501C771C308 /* Entities.swift in Sources */,
+				86B5F839E2DF6045C42FD912 /* FlexomBarApp.swift in Sources */,
+				04481A53CF2ECF4922471A52 /* FlexomStore.swift in Sources */,
+				58791ACA79BD47A278D1F81B /* Intents.swift in Sources */,
+				FA67A4DD34EEE66726B0E21A /* Keychain.swift in Sources */,
+				94303534B1A4370FB3F4A654 /* LoginView.swift in Sources */,
+				94CA92236DB366A5203473C1 /* MenuContentView.swift in Sources */,
+				28C1C43558AA5A62179F439B /* Shortcuts.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		91CD48F9675463AC33896E2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FlexomBar/FlexomBar.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FlexomBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.phimage.FlexomBar;
+				SDKROOT = macosx;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		B6BDF2B4409EEC89B4ED1AF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D466E758EBF6804E51E53988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FlexomBar/FlexomBar.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FlexomBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.phimage.FlexomBar;
+				SDKROOT = macosx;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		F4FEC18E7BA38A1C50E2CA90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10A3B743DE61AB42DC8240BC /* Build configuration list for PBXNativeTarget "FlexomBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D466E758EBF6804E51E53988 /* Debug */,
+				91CD48F9675463AC33896E2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E326A6EDFC97CF53F7DD509F /* Build configuration list for PBXProject "FlexomBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4FEC18E7BA38A1C50E2CA90 /* Debug */,
+				B6BDF2B4409EEC89B4ED1AF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1C40918EA20C96038052A086 /* XCRemoteSwiftPackageReference "swift-overkiz-api" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/phimage/swift-overkiz-api.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0EC57C9E9141222FC23E7A07 /* OverkizAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C40918EA20C96038052A086 /* XCRemoteSwiftPackageReference "swift-overkiz-api" */;
+			productName = OverkizAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4E859E45283FFA63AFF2C4C6 /* Project object */;
+}

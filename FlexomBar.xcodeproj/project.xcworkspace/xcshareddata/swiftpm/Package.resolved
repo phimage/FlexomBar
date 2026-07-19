@@ -1,0 +1,33 @@
+{
+  "originHash" : "a0c611b617569a952a269bd4ece4ed6043c5b811f83828de1f495aae4a5fe62e",
+  "pins" : [
+    {
+      "identity" : "swift-asn1",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-asn1.git",
+      "state" : {
+        "revision" : "a9a5efd40eaf558a2bcd48d64b1d1646be686008",
+        "version" : "1.7.1"
+      }
+    },
+    {
+      "identity" : "swift-crypto",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-crypto.git",
+      "state" : {
+        "revision" : "47d3869a7291f085c1fb9fb1e6d3b97a793f45c6",
+        "version" : "4.5.1"
+      }
+    },
+    {
+      "identity" : "swift-overkiz-api",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/phimage/swift-overkiz-api.git",
+      "state" : {
+        "revision" : "c25b6cc272012d6418098303031afa0f04d871d9",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 3
+}
