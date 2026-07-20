@@ -47,6 +47,13 @@ struct DeviceListView: View {
             .padding([.horizontal, .top], 12)
             .padding(.bottom, 8)
 
+            if !store.favoriteLights.isEmpty {
+                Divider()
+                FavoritesGrid(lights: store.favoriteLights)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+            }
+
             Divider()
 
             ScrollView {
@@ -181,6 +188,14 @@ struct LightRow: View {
                 Label(light.label, systemImage: light.isOn ? "lightbulb.fill" : "lightbulb")
                     .foregroundStyle(light.available ? .primary : .secondary)
                 Spacer()
+                Button {
+                    store.toggleFavorite(light.id)
+                } label: {
+                    Image(systemName: store.isFavorite(light.id) ? "star.fill" : "star")
+                        .foregroundStyle(store.isFavorite(light.id) ? .yellow : .secondary)
+                }
+                .buttonStyle(.plain)
+                .help("Épingler en favori")
             }
             .toggleStyle(.switch)
             .controlSize(.small)
@@ -273,5 +288,75 @@ struct ShutterRow: View {
     private var iconName: String {
         let closed = (shutter.closure ?? 0) >= 95
         return closed ? "blinds.horizontal.closed" : "blinds.horizontal.open"
+    }
+}
+
+/// A grid of favourite lights as tappable on/off squares.
+///
+/// Laid out as rows of fixed HStacks rather than a LazyVGrid, which
+/// MenuBarExtra windows can leave invisible.
+struct FavoritesGrid: View {
+    let lights: [LightControl]
+
+    private let columns = 3
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            ForEach(rows, id: \.self) { row in
+                HStack(spacing: 6) {
+                    ForEach(row) { light in
+                        FavoriteSquare(light: light)
+                    }
+                    // Keep the last row left-aligned rather than stretched.
+                    if row.count < columns {
+                        ForEach(0..<(columns - row.count), id: \.self) { _ in
+                            Color.clear.frame(maxWidth: .infinity)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private var rows: [[LightControl]] {
+        stride(from: 0, to: lights.count, by: columns).map {
+            Array(lights[$0..<min($0 + columns, lights.count)])
+        }
+    }
+}
+
+/// One favourite light as a square button: tap toggles on/off.
+struct FavoriteSquare: View {
+    @Environment(FlexomStore.self) private var store
+    let light: LightControl
+
+    var body: some View {
+        Button {
+            Task { await store.setLight(light.id, on: !light.isOn) }
+        } label: {
+            VStack(spacing: 4) {
+                Image(systemName: light.isOn ? "lightbulb.fill" : "lightbulb")
+                    .font(.title3)
+                Text(light.label)
+                    .font(.caption2)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+            }
+            .frame(maxWidth: .infinity, minHeight: 56)
+            .padding(.vertical, 6)
+            .background(
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(light.isOn ? Color.accentColor.opacity(0.25) : Color.secondary.opacity(0.12))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .strokeBorder(light.isOn ? Color.accentColor : Color.clear, lineWidth: 1)
+            )
+            .foregroundStyle(light.isOn ? Color.accentColor : Color.primary)
+        }
+        .buttonStyle(.plain)
+        .disabled(!light.available)
+        .help(light.isOn ? "Éteindre \(light.label)" : "Allumer \(light.label)")
     }
 }

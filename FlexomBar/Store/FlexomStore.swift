@@ -52,6 +52,15 @@ final class FlexomStore {
     /// Room to filter the menu on; `nil` shows every room.
     var roomFilter: String?
 
+    /// Device URLs the user pinned as favourites, persisted across launches.
+    ///
+    /// Surfaced as quick on/off squares at the top of the panel — the menu-bar
+    /// answer to "one light square to toggle", which a desktop widget cannot be
+    /// under ad-hoc signing (App Groups need a Team ID on macOS).
+    private(set) var favorites: Set<String> = Set(
+        UserDefaults.standard.stringArray(forKey: "favorites") ?? []
+    )
+
     /// Username persisted for the next launch; the password lives in the Keychain.
     private(set) var savedUsername: String? = UserDefaults.standard.string(forKey: "username")
 
@@ -144,6 +153,26 @@ final class FlexomStore {
             throw FlexomError.notLoggedIn
         }
         return client
+    }
+
+    // MARK: - Favourites
+
+    /// Favourite lights, in the panel's display order.
+    var favoriteLights: [LightControl] {
+        lights.filter { favorites.contains($0.id) }
+    }
+
+    func isFavorite(_ id: String) -> Bool {
+        favorites.contains(id)
+    }
+
+    func toggleFavorite(_ id: String) {
+        if favorites.contains(id) {
+            favorites.remove(id)
+        } else {
+            favorites.insert(id)
+        }
+        UserDefaults.standard.set(Array(favorites), forKey: "favorites")
     }
 
     // MARK: - Setup
