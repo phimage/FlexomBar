@@ -1,6 +1,7 @@
 import Foundation
 import Observation
 import OverkizAPI
+import WidgetKit
 
 /// A room in the setup, derived from the Overkiz place tree.
 struct Room: Identifiable, Hashable, Sendable {
@@ -109,6 +110,8 @@ final class FlexomStore {
             UserDefaults.standard.set(username, forKey: "username")
             savedUsername = username
             Keychain.savePassword(password, account: username)
+            // Mirror into the App Group so the widget process can authenticate.
+            SharedStore.updateCredentials(SharedCredentials(username: username, password: password))
 
             try await loadSetup()
             status = .connected
@@ -138,7 +141,10 @@ final class FlexomStore {
 
         devicesByURL = [:]
         liveStates = [:]
+        SharedStore.clear()
+        lastSharedLights = []
         rebuild()
+        WidgetCenter.shared.reloadAllTimelines()
         status = .loggedOut
     }
 
@@ -382,6 +388,30 @@ final class FlexomStore {
         if let filter = roomFilter, !roomIDs.contains(filter) {
             roomFilter = nil
         }
+
+        syncWidgetSnapshot()
+    }
+
+    /// Mirrors the current lights into the App Group and reloads the widget,
+    /// but only when they actually changed, to avoid churning the file and the
+    /// widget on every event poll.
+    private var lastSharedLights: [SharedLight] = []
+
+    private func syncWidgetSnapshot() {
+        let shared = lights.map { light in
+            SharedLight(
+                id: light.id,
+                label: light.label,
+                room: light.roomID.flatMap { roomLabels[$0] },
+                isOn: light.isOn,
+                dimmable: light.brightness != nil
+            )
+        }
+
+        guard shared != lastSharedLights else { return }
+        lastSharedLights = shared
+        SharedStore.updateLights(shared)
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     // Flexom models lights as plain EnOcean on/off actuators (uiClass OnOff,

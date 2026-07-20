@@ -5,6 +5,20 @@ options:
     macOS: "14.0"
   createIntermediateGroups: true
 
+settings:
+  base:
+    # Development signing with the user's Apple team, so the App Group
+    # capability (needed to share state with the widget) can be provisioned.
+    DEVELOPMENT_TEAM: JC563TS2PJ
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: Apple Development
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    ENABLE_HARDENED_RUNTIME: false
+    GENERATE_INFOPLIST_FILE: false
+    MARKETING_VERSION: 0.1.0
+    CURRENT_PROJECT_VERSION: 1
+
 packages:
   swift-overkiz-api:
     url: https://github.com/phimage/swift-overkiz-api.git
@@ -16,9 +30,12 @@ targets:
     platform: macOS
     sources:
       - FlexomBar
+      - Shared
     dependencies:
       - package: swift-overkiz-api
         product: OverkizAPI
+      - target: FlexomWidget
+        embed: true
     info:
       path: FlexomBar/Info.plist
       properties:
@@ -31,15 +48,32 @@ targets:
       properties:
         com.apple.security.app-sandbox: true
         com.apple.security.network.client: true
+        com.apple.security.application-groups:
+          - group.com.phimage.FlexomBar
+
+  FlexomWidget:
+    type: app-extension
+    platform: macOS
+    sources:
+      - FlexomWidget
+      - Shared
+    dependencies:
+      - package: swift-overkiz-api
+        product: OverkizAPI
+    info:
+      path: FlexomWidget/Info.plist
+      properties:
+        CFBundleDisplayName: Flexom
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: FlexomWidget/FlexomWidget.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        com.apple.security.application-groups:
+          - group.com.phimage.FlexomBar
     settings:
       base:
-        SWIFT_VERSION: "6.0"
-        SWIFT_STRICT_CONCURRENCY: complete
-        # Ad-hoc signing: enough to run locally and to register App Intents
-        # with the system; switch to a team identity for distribution.
-        CODE_SIGN_STYLE: Manual
-        CODE_SIGN_IDENTITY: "-"
-        ENABLE_HARDENED_RUNTIME: false
-        GENERATE_INFOPLIST_FILE: false
-        MARKETING_VERSION: 0.1.0
-        CURRENT_PROJECT_VERSION: 1
+        # Widget bundle id must be nested under the host app's bundle id.
+        PRODUCT_BUNDLE_IDENTIFIER: com.phimage.FlexomBar.Widget
