@@ -9,7 +9,7 @@ settings:
   base:
     # Development signing with the user's Apple team, so the App Group
     # capability (needed to share state with the widget) can be provisioned.
-    DEVELOPMENT_TEAM: JC563TS2PJ
+    DEVELOPMENT_TEAM: GGU39CDBL2
     CODE_SIGN_STYLE: Automatic
     CODE_SIGN_IDENTITY: Apple Development
     SWIFT_VERSION: "6.0"
